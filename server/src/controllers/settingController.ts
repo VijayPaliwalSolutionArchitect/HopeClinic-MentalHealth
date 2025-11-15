@@ -66,7 +66,7 @@ export const getSettingByKey = async (
       throw new AppError('Setting not found', 404);
     }
 
-    let value = setting.value;
+    let value: any = setting.value;
     
     if (setting.type === 'number') {
       value = Number(value);
