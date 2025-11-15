@@ -38,12 +38,7 @@ model User {
   notifications    Notification[]
 }
 
-enum UserRole {
-  ADMIN
-  DOCTOR
-  CLINIC_STAFF
-  PATIENT
-}
+// UserRole values: ADMIN, DOCTOR, CLINIC_STAFF, PATIENT
 
 model RefreshToken {
   id        String   @id @default(uuid())
