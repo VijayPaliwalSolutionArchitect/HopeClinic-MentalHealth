@@ -200,11 +200,7 @@ model Blog {
   comments   BlogComment[]
 }
 
-enum BlogStatus {
-  DRAFT
-  PUBLISHED
-  ARCHIVED
-}
+// BlogStatus values: DRAFT, PUBLISHED, ARCHIVED
 
 model BlogCategory {
   id          String   @id @default(uuid())
