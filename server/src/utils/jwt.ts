@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import jwt, { SignOptions } from 'jsonwebtoken';
 import prisma from '../config/prisma';
 
 interface TokenPayload {
@@ -9,14 +9,18 @@ interface TokenPayload {
 
 export const generateAccessToken = (payload: TokenPayload): string => {
   const secret = process.env.JWT_SECRET || 'secret';
-  const expiresIn: string = process.env.JWT_EXPIRES_IN || '7d';
-  return jwt.sign(payload, secret, { expiresIn });
+  const options: SignOptions = {
+    expiresIn: process.env.JWT_EXPIRES_IN || '7d'
+  };
+  return jwt.sign(payload, secret, options);
 };
 
 export const generateRefreshToken = (payload: TokenPayload): string => {
   const secret = process.env.JWT_REFRESH_SECRET || 'refresh-secret';
-  const expiresIn: string = process.env.JWT_REFRESH_EXPIRES_IN || '30d';
-  return jwt.sign(payload, secret, { expiresIn });
+  const options: SignOptions = {
+    expiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '30d'
+  };
+  return jwt.sign(payload, secret, options);
 };
 
 export const verifyRefreshToken = (token: string): TokenPayload => {
