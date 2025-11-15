@@ -140,20 +140,8 @@ model AISession {
   reports  AIReport[]
 }
 
-enum SessionType {
-  INITIAL_ASSESSMENT
-  ONGOING_MONITORING
-  CRISIS_INTERVENTION
-  FOLLOW_UP_CHECK
-}
-
-enum SessionStatus {
-  ACTIVE
-  COMPLETED
-  PAUSED
-  ESCALATED
-  ABANDONED
-}
+// SessionType values: INITIAL_ASSESSMENT, ONGOING_MONITORING, CRISIS_INTERVENTION, FOLLOW_UP_CHECK
+// SessionStatus values: ACTIVE, COMPLETED, PAUSED, ESCALATED, ABANDONED
 
 model AIMessage {
   id          String    @id @default(uuid())
