@@ -44,4 +44,7 @@ Thumbs.db
 # Misc
 *.pem
 .cache/
-.temp/
+.temp/-e 
+# Environment files
+*.env
+*.env.*
