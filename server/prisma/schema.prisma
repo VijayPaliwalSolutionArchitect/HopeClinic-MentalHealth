@@ -122,8 +122,8 @@ model AISession {
   id              String        @id @default(uuid())
   patientId       String
   patient         User          @relation(fields: [patientId], references: [id], onDelete: Cascade)
-  sessionType     SessionType
-  status          SessionStatus @default(ACTIVE)
+  sessionType     String // INITIAL_ASSESSMENT, ONGOING_MONITORING, CRISIS_INTERVENTION, FOLLOW_UP_CHECK
+  status          String @default("ACTIVE") // ACTIVE, COMPLETED, PAUSED, ESCALATED, ABANDONED
   mood            String?
   urgencyLevel    String?       @default("NORMAL") // NORMAL, MODERATE, HIGH, CRITICAL
   summary         String?
