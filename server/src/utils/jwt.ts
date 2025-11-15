@@ -9,16 +9,14 @@ interface TokenPayload {
 
 export const generateAccessToken = (payload: TokenPayload): string => {
   const secret = process.env.JWT_SECRET || 'secret';
-  return jwt.sign(payload, secret, {
-    expiresIn: (process.env.JWT_EXPIRES_IN || '7d') as any
-  });
+  // @ts-ignore
+  return jwt.sign(payload, secret, { expiresIn: process.env.JWT_EXPIRES_IN || '7d' });
 };
 
 export const generateRefreshToken = (payload: TokenPayload): string => {
   const secret = process.env.JWT_REFRESH_SECRET || 'refresh-secret';
-  return jwt.sign(payload, secret, {
-    expiresIn: (process.env.JWT_REFRESH_EXPIRES_IN || '30d') as any
-  });
+  // @ts-ignore
+  return jwt.sign(payload, secret, { expiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '30d' });
 };
 
 export const verifyRefreshToken = (token: string): TokenPayload => {
