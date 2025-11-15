@@ -266,13 +266,7 @@ model Inquiry {
   updatedAt  DateTime      @updatedAt
 }
 
-enum InquiryStatus {
-  NEW
-  IN_PROGRESS
-  REPLIED
-  CLOSED
-  IGNORED
-}
+// InquiryStatus values: NEW, IN_PROGRESS, REPLIED, CLOSED, IGNORED
 
 // Therapy Programs
 model TherapyProgram {
