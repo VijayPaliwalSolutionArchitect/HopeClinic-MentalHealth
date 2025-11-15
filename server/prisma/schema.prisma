@@ -17,7 +17,7 @@ model User {
   firstName     String
   lastName      String
   phone         String?
-  role          UserRole @default(PATIENT)
+  role          String @default("PATIENT") // ADMIN, DOCTOR, CLINIC_STAFF, PATIENT
   isActive      Boolean  @default(true)
   isVerified    Boolean  @default(false)
   avatar        String?
