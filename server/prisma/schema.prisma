@@ -1,0 +1,421 @@
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User and Authentication
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password      String
+  firstName     String
+  lastName      String
+  phone         String?
+  role          UserRole @default(PATIENT)
+  isActive      Boolean  @default(true)
+  isVerified    Boolean  @default(false)
+  avatar        String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  lastLoginAt   DateTime?
+
+  // Relations
+  appointments     Appointment[]
+  aiSessions       AISession[]
+  inquiries        Inquiry[]
+  testimonials     Testimonial[]
+  blogs            Blog[]
+  patientProfile   PatientProfile?
+  doctorProfile    DoctorProfile?
+  refreshTokens    RefreshToken[]
+  activityLogs     ActivityLog[]
+  notifications    Notification[]
+}
+
+enum UserRole {
+  ADMIN
+  DOCTOR
+  CLINIC_STAFF
+  PATIENT
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+// Patient Profile
+model PatientProfile {
+  id                String   @id @default(uuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dateOfBirth       DateTime?
+  gender            String?
+  address           String?
+  city              String?
+  state             String?
+  zipCode           String?
+  emergencyContact  String?
+  medicalHistory    String?
+  currentMedication String?
+  allergies         String?
+  insuranceInfo     String?
+  consentAIChat     Boolean  @default(false)
+  consentDataShare  Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// Doctor Profile
+model DoctorProfile {
+  id              String   @id @default(uuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  specialization  String
+  qualification   String
+  experience      Int
+  bio             String?
+  consultationFee Float?
+  availableDays   String   // JSON string: ["Monday", "Tuesday"]
+  availableHours  String   // JSON string: {"start": "16:00", "end": "20:00"}
+  hospitalSchedule String? // JSON string for hospital shifts
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// Appointments
+model Appointment {
+  id              String            @id @default(uuid())
+  patientId       String
+  patient         User              @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  appointmentType AppointmentType
+  appointmentDate DateTime
+  startTime       String
+  endTime         String
+  status          AppointmentStatus @default(SCHEDULED)
+  meetingPlatform String?           // Google Meet, WhatsApp, Zoom, etc.
+  meetingUrl      String?
+  notes           String?
+  reasonForVisit  String?
+  diagnosis       String?
+  prescription    String?
+  followUpDate    DateTime?
+  isOnline        Boolean           @default(false)
+  attended        Boolean           @default(false)
+  cancelledBy     String?
+  cancelReason    String?
+  reminderSent    Boolean           @default(false)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+}
+
+enum AppointmentType {
+  INITIAL_CONSULTATION
+  FOLLOW_UP
+  THERAPY_SESSION
+  ASSESSMENT
+  EMERGENCY
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+  RESCHEDULED
+}
+
+// AI Chat System
+model AISession {
+  id              String        @id @default(uuid())
+  patientId       String
+  patient         User          @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  sessionType     SessionType
+  status          SessionStatus @default(ACTIVE)
+  mood            String?
+  urgencyLevel    String?       @default("NORMAL") // NORMAL, MODERATE, HIGH, CRITICAL
+  summary         String?
+  recommendations String?
+  redFlags        String?       // JSON array of detected issues
+  aiModel         String        @default("gpt-4o")
+  consentGiven    Boolean       @default(false)
+  startedAt       DateTime      @default(now())
+  endedAt         DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  messages AIMessage[]
+  reports  AIReport[]
+}
+
+enum SessionType {
+  INITIAL_ASSESSMENT
+  ONGOING_MONITORING
+  CRISIS_INTERVENTION
+  FOLLOW_UP_CHECK
+}
+
+enum SessionStatus {
+  ACTIVE
+  COMPLETED
+  PAUSED
+  ESCALATED
+  ABANDONED
+}
+
+model AIMessage {
+  id          String    @id @default(uuid())
+  sessionId   String
+  session     AISession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  role        String    // user, assistant, system
+  content     String
+  sentiment   String?   // positive, negative, neutral, concerned
+  emotions    String?   // JSON array of detected emotions
+  keywords    String?   // JSON array of important keywords
+  createdAt   DateTime  @default(now())
+}
+
+model AIReport {
+  id                 String    @id @default(uuid())
+  sessionId          String
+  session            AISession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  reportType         String    // assessment, summary, crisis
+  findings           String
+  moodAnalysis       String?
+  conditionIndicators String?  // JSON
+  riskAssessment     String?
+  recommendations    String
+  followUpActions    String?
+  generatedBy        String    @default("AI")
+  reviewedBy         String?   // Doctor ID
+  reviewedAt         DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+}
+
+// Blog System
+model Blog {
+  id              String     @id @default(uuid())
+  title           String
+  slug            String     @unique
+  excerpt         String?
+  content         String
+  featuredImage   String?
+  authorId        String
+  author          User       @relation(fields: [authorId], references: [id])
+  status          BlogStatus @default(DRAFT)
+  views           Int        @default(0)
+  likes           Int        @default(0)
+  isPublished     Boolean    @default(false)
+  publishedAt     DateTime?
+  metaTitle       String?
+  metaDescription String?
+  metaKeywords    String?
+  ogImage         String?
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  categories BlogCategory[]
+  tags       BlogTag[]
+  comments   BlogComment[]
+}
+
+enum BlogStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model BlogCategory {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  blogs       Blog[]
+}
+
+model BlogTag {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  slug      String   @unique
+  createdAt DateTime @default(now())
+  blogs     Blog[]
+}
+
+model BlogComment {
+  id        String   @id @default(uuid())
+  blogId    String
+  blog      Blog     @relation(fields: [blogId], references: [id], onDelete: Cascade)
+  name      String
+  email     String
+  comment   String
+  isApproved Boolean @default(false)
+  createdAt DateTime @default(now())
+}
+
+// Testimonials
+model Testimonial {
+  id         String   @id @default(uuid())
+  patientId  String?
+  patient    User?    @relation(fields: [patientId], references: [id], onDelete: SetNull)
+  name       String
+  avatar     String?
+  rating     Int      @default(5)
+  message    String
+  location   String?
+  program    String?  // Which therapy program
+  isApproved Boolean  @default(false)
+  isFeatured Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// Inquiries / Contact Form
+model Inquiry {
+  id         String        @id @default(uuid())
+  userId     String?
+  user       User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  name       String
+  email      String
+  phone      String?
+  subject    String
+  message    String
+  status     InquiryStatus @default(NEW)
+  priority   String        @default("NORMAL")
+  assignedTo String?
+  response   String?
+  respondedAt DateTime?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+}
+
+enum InquiryStatus {
+  NEW
+  IN_PROGRESS
+  REPLIED
+  CLOSED
+  IGNORED
+}
+
+// Therapy Programs
+model TherapyProgram {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  description String
+  icon        String?
+  image       String?
+  benefits    String?  // JSON array
+  whoItsFor   String?  // JSON array
+  duration    String?
+  price       Float?
+  isActive    Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Settings & Configuration
+model Setting {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  value     String
+  type      String   @default("string") // string, number, boolean, json
+  category  String   @default("general")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Telemetry & Exception Logging
+model ExceptionLog {
+  id         String   @id @default(uuid())
+  source     String   // frontend, backend
+  level      String   // info, warning, error, critical
+  message    String
+  stackTrace String?
+  payload    String?  // JSON
+  userAgent  String?
+  userId     String?
+  url        String?
+  resolved   Boolean  @default(false)
+  resolvedBy String?
+  resolvedAt DateTime?
+  createdAt  DateTime @default(now())
+}
+
+model ActivityLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  entity    String?  // appointment, blog, user, etc.
+  entityId  String?
+  details   String?  // JSON
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+}
+
+// Notifications
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  message   String
+  type      String   @default("info") // info, success, warning, error
+  isRead    Boolean  @default(false)
+  actionUrl String?
+  createdAt DateTime @default(now())
+}
+
+// Email Templates
+model EmailTemplate {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  subject     String
+  htmlContent String
+  textContent String?
+  variables   String?  // JSON array of available variables
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Calendar Holidays & Blocked Days
+model CalendarBlock {
+  id          String   @id @default(uuid())
+  date        DateTime
+  reason      String
+  isRecurring Boolean  @default(false)
+  blockedBy   String?
+  createdAt   DateTime @default(now())
+}
+
+// SEO Management
+model SEOMeta {
+  id          String   @id @default(uuid())
+  page        String   @unique // home, about, blog-detail, etc.
+  title       String
+  description String
+  keywords    String?
+  ogTitle     String?
+  ogDescription String?
+  ogImage     String?
+  canonical   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
