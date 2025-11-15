@@ -93,11 +93,11 @@ model Appointment {
   id              String            @id @default(uuid())
   patientId       String
   patient         User              @relation(fields: [patientId], references: [id], onDelete: Cascade)
-  appointmentType AppointmentType
+  appointmentType String // INITIAL_CONSULTATION, FOLLOW_UP, THERAPY_SESSION, ASSESSMENT, EMERGENCY
   appointmentDate DateTime
   startTime       String
   endTime         String
-  status          AppointmentStatus @default(SCHEDULED)
+  status          String @default("SCHEDULED") // SCHEDULED, CONFIRMED, IN_PROGRESS, COMPLETED, CANCELLED, NO_SHOW, RESCHEDULED
   meetingPlatform String?           // Google Meet, WhatsApp, Zoom, etc.
   meetingUrl      String?
   notes           String?
