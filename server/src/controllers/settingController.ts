@@ -26,12 +26,12 @@ export const getSettings = async (
       
       // Parse value based on type
       if (setting.type === 'number') {
-        value = Number(value);
+        value = Number(value) as any;
       } else if (setting.type === 'boolean') {
-        value = value === 'true';
+        value = (value === 'true') as any;
       } else if (setting.type === 'json') {
         try {
-          value = JSON.parse(value);
+          value = JSON.parse(value) as any;
         } catch (e) {
           // Keep as string if parsing fails
         }
