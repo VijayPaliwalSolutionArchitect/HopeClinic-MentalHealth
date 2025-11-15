@@ -257,7 +257,7 @@ model Inquiry {
   phone      String?
   subject    String
   message    String
-  status     InquiryStatus @default(NEW)
+  status     String @default("NEW") // NEW, IN_PROGRESS, REPLIED, CLOSED, IGNORED
   priority   String        @default("NORMAL")
   assignedTo String?
   response   String?
