@@ -6,6 +6,7 @@ import { Heart, Brain, Users, Shield, CheckCircle, ArrowRight, Sparkles, Star, Q
 import api from '../lib/api';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+import InteractiveHeroShowcase from '../components/InteractiveHeroShowcase';
 
 const EnhancedHome = () => {
   const [programs, setPrograms] = useState([]);
