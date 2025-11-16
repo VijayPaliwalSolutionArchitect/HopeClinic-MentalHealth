@@ -14,6 +14,7 @@ import Contact from './pages/Contact';
 import BookAppointment from './pages/BookAppointment';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AuthCallback from './pages/AuthCallback';
 import PatientDashboard from './pages/dashboard/PatientDashboard';
 import MyAppointments from './pages/dashboard/MyAppointments';
 import AIChat from './pages/dashboard/AIChat';
