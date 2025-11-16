@@ -66,8 +66,8 @@ const EnhancedHome = () => {
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">Your Journey to <span className="text-gradient bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Mental Wellness</span> Starts Here</h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">Professional therapy with AI-powered support by Dr. Bharat Agarwal</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/book-appointment"><Button size="lg">Book Appointment<ArrowRight className="ml-2 w-5 h-5" /></Button></Link>
-                <Link to="/dashboard/ai-chat"><Button variant="outline" size="lg">Try AI Chat</Button></Link>
+                <Link to="/book-appointment"><Button data-testid="book-appointment-btn" size="lg">Book Appointment<ArrowRight className="ml-2 w-5 h-5" /></Button></Link>
+                <Link to="/dashboard/ai-chat"><Button data-testid="try-ai-chat-btn" variant="outline" size="lg">Try AI Chat</Button></Link>
               </div>
               <div className="grid grid-cols-4 gap-6 mt-12">
                 {stats.map((stat, i) => (<motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 * i }} className="text-center"><div className="text-3xl font-bold text-primary-600">{stat.number}</div><div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div></motion.div>))}
