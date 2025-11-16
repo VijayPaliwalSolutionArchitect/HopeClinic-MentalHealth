@@ -1,6 +1,7 @@
 import express from 'express';
 import { body } from 'express-validator';
 import * as authController from '../controllers/authController';
+import { googleAuth } from '../controllers/googleAuthController';
 import { authenticate } from '../middlewares/auth';
 
 const router = express.Router();
