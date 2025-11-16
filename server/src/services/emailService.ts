@@ -1,23 +1,18 @@
 // EmailJS integration for sending emails
-// Note: EmailJS requires client-side implementation, but we can prepare the data here
+import { sendAppointmentConfirmation, sendInquiryReply } from '../utils/emailService';
 
 export const sendAppointmentEmail = async (appointment: any) => {
   try {
-    // In production, this would integrate with EmailJS API or use nodemailer
-    console.log('Sending appointment confirmation email:', {
-      to: appointment.patient.email,
-      subject: 'Appointment Confirmation - Hope Clinic',
-      appointmentDetails: {
-        date: appointment.appointmentDate,
-        time: appointment.startTime,
-        type: appointment.appointmentType,
-        meetingUrl: appointment.meetingUrl
-      }
-    });
-
-    // For now, we'll return success
-    // In production, implement actual EmailJS or nodemailer logic
-    return { success: true };
+    const user = appointment.patient;
+    const result = await sendAppointmentConfirmation(appointment, user);
+    
+    if (result.success) {
+      console.log('✅ Appointment confirmation email sent to:', user.email);
+    } else {
+      console.warn('⚠️ Email sending failed (EmailJS not configured)');
+    }
+    
+    return result;
   } catch (error) {
     console.error('Email sending failed:', error);
     return { success: false, error };
