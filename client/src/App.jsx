@@ -55,6 +55,7 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/auth/callback" element={<AuthCallback />} />
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<PatientDashboard />} />
           <Route path="appointments" element={<MyAppointments />} />
