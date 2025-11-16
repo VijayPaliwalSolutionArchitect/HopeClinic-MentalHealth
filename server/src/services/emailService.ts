@@ -35,12 +35,15 @@ export const sendWelcomeEmail = async (user: any) => {
 
 export const sendInquiryResponse = async (inquiry: any, response: string) => {
   try {
-    console.log('Sending inquiry response:', {
-      to: inquiry.email,
-      subject: `Re: ${inquiry.subject}`,
-      response
-    });
-    return { success: true };
+    const result = await sendInquiryReply(inquiry, response);
+    
+    if (result.success) {
+      console.log('✅ Inquiry response email sent to:', inquiry.email);
+    } else {
+      console.warn('⚠️ Email sending failed (EmailJS not configured)');
+    }
+    
+    return result;
   } catch (error) {
     console.error('Email sending failed:', error);
     return { success: false, error };
