@@ -8,6 +8,7 @@ import { telemetryMiddleware } from './middlewares/telemetry';
 
 // Import routes
 import authRoutes from './routes/auth';
+import googleAuthRoutes from './routes/googleAuth';
 import userRoutes from './routes/users';
 import appointmentRoutes from './routes/appointments';
 import aiChatRoutes from './routes/aiChat';
