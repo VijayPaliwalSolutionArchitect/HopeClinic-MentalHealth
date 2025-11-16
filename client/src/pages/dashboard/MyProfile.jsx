@@ -100,6 +100,62 @@ const MyProfile = () => {
           </form>
         </Card>
       </div>
+
+      {/* Password Change Section */}
+      <Card className="p-6">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Change Password</h2>
+        <form onSubmit={handlePasswordSubmit} className="space-y-6 max-w-md">
+          <Input 
+            label="Current Password" 
+            type="password" 
+            name="currentPassword" 
+            value={passwordData.currentPassword} 
+            onChange={handlePasswordChange}
+            required
+          />
+          <Input 
+            label="New Password" 
+            type="password" 
+            name="newPassword" 
+            value={passwordData.newPassword} 
+            onChange={handlePasswordChange}
+            required
+            helperText="Minimum 6 characters"
+          />
+          <Input 
+            label="Confirm New Password" 
+            type="password" 
+            name="confirmPassword" 
+            value={passwordData.confirmPassword} 
+            onChange={handlePasswordChange}
+            required
+          />
+          <Button type="submit" loading={passwordLoading}>Update Password</Button>
+        </form>
+      </Card>
+
+      {/* Account Information */}
+      <Card className="p-6">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Account Information</h2>
+        <div className="space-y-4 text-sm">
+          <div className="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-700">
+            <span className="text-gray-600 dark:text-gray-400">Account Status</span>
+            <span className="font-medium text-green-600">Active</span>
+          </div>
+          <div className="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-700">
+            <span className="text-gray-600 dark:text-gray-400">Email Verified</span>
+            <span className="font-medium text-green-600">{user?.isVerified ? 'Yes' : 'No'}</span>
+          </div>
+          <div className="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-700">
+            <span className="text-gray-600 dark:text-gray-400">Member Since</span>
+            <span className="font-medium">{new Date(user?.createdAt).toLocaleDateString()}</span>
+          </div>
+          <div className="flex items-center justify-between py-2">
+            <span className="text-gray-600 dark:text-gray-400">User ID</span>
+            <span className="font-mono text-xs">{user?.id?.slice(0, 8)}...</span>
+          </div>
+        </div>
+      </Card>
     </div>
   );
 };
