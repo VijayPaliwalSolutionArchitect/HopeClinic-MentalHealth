@@ -1,20 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, CheckCircle, X, Star } from 'lucide-react';
+import { Plus, CheckCircle, X, Star, Edit, Trash } from 'lucide-react';
 import toast from 'react-hot-toast';
 import api from '../../lib/api';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import Badge from '../../components/ui/Badge';
+import Input from '../../components/ui/Input';
+import Textarea from '../../components/ui/Textarea';
+import Select from '../../components/ui/Select';
 
 const AdminTestimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [editingTestimonial, setEditingTestimonial] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    location: '',
+    program: '',
+    rating: 5,
+    message: '',
+    isApproved: false,
+    isFeatured: false
+  });
 
   useEffect(() => { fetchTestimonials(); }, []);
 
   const fetchTestimonials = async () => {
     try {
-      const response = await api.get('/testimonials', { params: { approved: 'false' } });
+      const response = await api.get('/testimonials', { params: { limit: 100 } });
       setTestimonials(response.data.data);
     } catch (error) {}
     finally { setLoading(false); }
