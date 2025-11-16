@@ -1,17 +1,17 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import EnhancedHeader from '../components/EnhancedHeader';
+import EnhancedFooter from '../components/EnhancedFooter';
 import WhatsAppButton from '../components/WhatsAppButton';
 
 const MainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
-      <Header />
-      <main className="flex-1">
+      <EnhancedHeader />
+      <main className="flex-1 pt-20">
         <Outlet />
       </main>
-      <Footer />
+      <EnhancedFooter />
       <WhatsAppButton />
     </div>
   );
