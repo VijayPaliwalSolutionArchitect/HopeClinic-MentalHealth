@@ -29,6 +29,9 @@ router.post(
   authController.login
 );
 
+// Google OAuth
+router.post('/google', googleAuth);
+
 // Refresh token
 router.post('/refresh', authController.refreshToken);
 
