@@ -46,6 +46,7 @@ app.use(telemetryMiddleware);
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/auth', googleAuthRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/ai-chat', aiChatRoutes);
