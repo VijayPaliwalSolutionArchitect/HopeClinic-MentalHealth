@@ -452,7 +452,9 @@ After setup, verify everything works:
 2. **Clear node_modules and reinstall:**
    ```bash
    rm -rf node_modules client/node_modules server/node_modules
-   yarn install
+   cd server && npm install
+   cd ../client && npm install
+   cd ..
    ```
 
 3. **Check for port conflicts:**
