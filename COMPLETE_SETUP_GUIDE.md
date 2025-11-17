@@ -4,7 +4,7 @@
 
 ### Prerequisites
 - Node.js 18+ installed
-- Yarn package manager
+- npm (comes with Node.js)
 - Terminal/Command Prompt
 
 ---
@@ -15,17 +15,22 @@
 # Navigate to project root
 cd /path/to/HopeClinic-MentalHealth
 
-# Install root dependencies
-yarn install
+# Install server dependencies
+cd server
+npm install
 
-# This automatically installs both client and server dependencies
-# because of workspace configuration in package.json
+# Install client dependencies
+cd ../client
+npm install
+
+# Go back to root
+cd ..
 ```
 
 **What this does:**
 - Installs all frontend packages (React, Vite, Tailwind, etc.)
 - Installs all backend packages (Express, Prisma, TypeScript, etc.)
-- Sets up yarn workspaces
+- Sets up node_modules in both directories
 
 ---
 
