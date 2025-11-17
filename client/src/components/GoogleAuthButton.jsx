@@ -78,7 +78,7 @@ const GoogleAuthButton = ({ variant = 'outline', size = 'md', text = 'Continue w
 
     const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
     if (!clientId || clientId.includes('placeholder')) {
-      toast.error('Google authentication is not configured. Please contact support.');
+      toast.info('Google OAuth is not configured. Using email/password login instead.');
       return;
     }
 
