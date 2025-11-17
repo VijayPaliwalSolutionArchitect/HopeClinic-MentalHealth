@@ -104,6 +104,28 @@ const EnhancedHeader = () => {
               {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
 
+            {/* Language Switcher */}
+            <div className="relative group">
+              <button className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <Languages className="w-5 h-5" />
+                <span className="text-sm font-medium">{i18n.language === 'hi' ? 'हिं' : 'EN'}</span>
+              </button>
+              <div className="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <button
+                  onClick={() => changeLanguage('en')}
+                  className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-xl transition-colors ${i18n.language === 'en' ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600' : ''}`}
+                >
+                  English
+                </button>
+                <button
+                  onClick={() => changeLanguage('hi')}
+                  className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-xl transition-colors ${i18n.language === 'hi' ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600' : ''}`}
+                >
+                  हिंदी (Hindi)
+                </button>
+              </div>
+            </div>
+
             {isAuthenticated ? (
               <div className="flex items-center gap-3">
                 <Link 
