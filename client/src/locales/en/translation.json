@@ -1,0 +1,253 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "programs": "Programs",
+    "blogs": "Blogs",
+    "contact": "Contact",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "bookAppointment": "Book Appointment",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "submit": "Submit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "welcome": "Welcome",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "callNow": "Call Now",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address"
+  },
+  "header": {
+    "tagline": "Professional Mental Health Care",
+    "aiPowered": "AI-Powered Support",
+    "bookConsultation": "Book Free Consultation",
+    "programsDropdown": "Our Programs",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Your Journey to Mental Wellness",
+    "subtitle": "Professional therapy and support for a healthier, happier you",
+    "description": "Evidence-based treatment with compassionate care. We're here to help you overcome challenges and live your best life.",
+    "cta": "Start Your Journey",
+    "ctaSecondary": "Learn About Us",
+    "stats": {
+      "experience": "Years Experience",
+      "patients": "Patients Helped",
+      "success": "Success Rate",
+      "therapists": "Expert Therapists"
+    }
+  },
+  "programs": {
+    "title": "Our Treatment Programs",
+    "subtitle": "Specialized care for your unique needs",
+    "anxiety": {
+      "title": "Anxiety & Stress Management",
+      "description": "Overcome anxiety, panic attacks, and chronic stress with proven therapeutic techniques."
+    },
+    "depression": {
+      "title": "Depression Treatment",
+      "description": "Evidence-based therapy to overcome depression and rediscover joy in life."
+    },
+    "relationship": {
+      "title": "Relationship Counseling",
+      "description": "Strengthen bonds and resolve conflicts with professional couples therapy."
+    },
+    "trauma": {
+      "title": "Trauma & PTSD Therapy",
+      "description": "Safe, compassionate care for healing from traumatic experiences."
+    },
+    "addiction": {
+      "title": "Addiction Recovery",
+      "description": "Comprehensive support for overcoming substance and behavioral addictions."
+    },
+    "ocd": {
+      "title": "OCD Treatment",
+      "description": "Evidence-based ERP therapy to break free from obsessive thoughts and compulsions."
+    },
+    "worklife": {
+      "title": "Work-Life Balance",
+      "description": "Manage stress, prevent burnout, and create a fulfilling life."
+    }
+  },
+  "about": {
+    "title": "About Hope Clinic",
+    "mission": "Our Mission",
+    "missionText": "At Hope Clinic, we believe everyone deserves access to quality mental health care. Our mission is to provide evidence-based, compassionate treatment that empowers individuals to overcome challenges and live fulfilling lives.",
+    "values": "Our Core Values",
+    "team": "Meet Our Expert Team",
+    "compassion": "Compassionate Care",
+    "excellence": "Excellence",
+    "confidentiality": "Confidentiality",
+    "results": "Results-Driven"
+  },
+  "testimonials": {
+    "title": "What Our Patients Say",
+    "subtitle": "Real stories from real people",
+    "readMore": "Read Their Story"
+  },
+  "blog": {
+    "title": "Mental Health Blog",
+    "subtitle": "Expert insights and wellness tips",
+    "latestPosts": "Latest Posts",
+    "categories": "Categories",
+    "tags": "Tags",
+    "author": "Author",
+    "date": "Date",
+    "readTime": "min read"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "We're here to help you",
+    "name": "Your Name",
+    "email": "Your Email",
+    "phone": "Your Phone",
+    "message": "Your Message",
+    "send": "Send Message",
+    "info": "Contact Information",
+    "hours": "Working Hours",
+    "emergency": "Emergency Hotline"
+  },
+  "footer": {
+    "description": "Professional mental health care with compassion and expertise. Your journey to wellness starts here.",
+    "quickLinks": "Quick Links",
+    "services": "Our Services",
+    "contact": "Contact Us",
+    "followUs": "Follow Us",
+    "installApp": "Install App",
+    "copyright": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "overview": "Overview",
+    "appointments": "My Appointments",
+    "aiChat": "AI Chat",
+    "profile": "My Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "upcomingAppointments": "Upcoming Appointments",
+    "pastAppointments": "Past Appointments",
+    "noAppointments": "No appointments scheduled",
+    "bookNew": "Book New Appointment"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "appointments": "Manage Appointments",
+    "blogs": "Manage Blogs",
+    "testimonials": "Manage Testimonials",
+    "users": "Manage Users",
+    "settings": "Clinic Settings",
+    "inquiries": "Inquiries",
+    "approve": "Approve",
+    "reject": "Reject",
+    "reply": "Reply",
+    "create": "Create New",
+    "update": "Update",
+    "clinicName": "Clinic Name",
+    "clinicPhone": "Phone Number",
+    "clinicEmail": "Email Address",
+    "clinicAddress": "Address",
+    "whatsappNumber": "WhatsApp Number",
+    "workingHours": "Working Hours"
+  },
+  "appointment": {
+    "title": "Book Appointment",
+    "selectDate": "Select Date",
+    "selectTime": "Select Time",
+    "selectType": "Appointment Type",
+    "online": "Online",
+    "offline": "In-Person",
+    "therapist": "Select Therapist",
+    "reason": "Reason for Visit",
+    "notes": "Additional Notes",
+    "confirm": "Confirm Appointment",
+    "success": "Appointment booked successfully!",
+    "error": "Failed to book appointment. Please try again."
+  },
+  "auth": {
+    "loginTitle": "Welcome Back",
+    "loginSubtitle": "Sign in to access your account",
+    "registerTitle": "Create Account",
+    "registerSubtitle": "Join Hope Clinic today",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone Number",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signInWithGoogle": "Continue with Google",
+    "orContinueWith": "Or continue with",
+    "agreeToTerms": "I agree to the Terms of Service and Privacy Policy"
+  },
+  "programPage": {
+    "symptoms": "Common Symptoms",
+    "causes": "What Causes",
+    "treatments": "Treatment Approaches",
+    "basic": "Basic",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "successStories": "Success Stories",
+    "before": "Before",
+    "after": "After",
+    "duration": "Duration",
+    "cta": "Ready to Start Your Journey?",
+    "ctaDescription": "Take the first step toward healing. Our expert therapists are here to help you every step of the way.",
+    "bookConsultation": "Book Free Consultation",
+    "understanding": "Understanding"
+  },
+  "aiChat": {
+    "title": "AI Mental Health Chat",
+    "subtitle": "24/7 Support Assistant",
+    "placeholder": "Type your message here...",
+    "send": "Send",
+    "newSession": "New Session",
+    "sessionTypes": {
+      "initial": "Initial Assessment",
+      "ongoing": "Ongoing Monitoring",
+      "crisis": "Crisis Intervention",
+      "followup": "Follow-up Check"
+    },
+    "disclaimer": "This AI assistant provides general support and is not a substitute for professional therapy."
+  },
+  "messages": {
+    "success": {
+      "saved": "Saved successfully!",
+      "updated": "Updated successfully!",
+      "deleted": "Deleted successfully!",
+      "sent": "Message sent successfully!",
+      "loggedIn": "Welcome back!",
+      "loggedOut": "Logged out successfully!",
+      "registered": "Account created successfully!"
+    },
+    "error": {
+      "generic": "Something went wrong. Please try again.",
+      "network": "Network error. Please check your connection.",
+      "unauthorized": "You are not authorized to perform this action.",
+      "notFound": "Resource not found.",
+      "validation": "Please check your inputs and try again."
+    }
+  }
+}

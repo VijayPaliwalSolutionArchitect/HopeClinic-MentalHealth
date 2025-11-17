@@ -1,0 +1,253 @@
+{
+  "common": {
+    "home": "होम",
+    "about": "हमारे बारे में",
+    "programs": "कार्यक्रम",
+    "blogs": "ब्लॉग",
+    "contact": "संपर्क करें",
+    "login": "लॉगिन",
+    "logout": "लॉगआउट",
+    "register": "रजिस्टर करें",
+    "dashboard": "डैशबोर्ड",
+    "signIn": "साइन इन",
+    "signUp": "साइन अप",
+    "bookAppointment": "अपॉइंटमेंट बुक करें",
+    "getStarted": "शुरू करें",
+    "learnMore": "और जानें",
+    "readMore": "और पढ़ें",
+    "viewAll": "सभी देखें",
+    "submit": "जमा करें",
+    "save": "सेव करें",
+    "cancel": "रद्द करें",
+    "edit": "संपादित करें",
+    "delete": "हटाएं",
+    "search": "खोजें",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "welcome": "स्वागत है",
+    "back": "वापस",
+    "next": "अगला",
+    "previous": "पिछला",
+    "callNow": "अभी कॉल करें",
+    "email": "ईमेल",
+    "phone": "फोन",
+    "address": "पता"
+  },
+  "header": {
+    "tagline": "[Professional Mental Health Care - Hindi Translation]",
+    "aiPowered": "[AI-Powered Support - Hindi]",
+    "bookConsultation": "[Book Free Consultation - Hindi]",
+    "programsDropdown": "[Our Programs - Hindi]",
+    "darkMode": "[Dark Mode - Hindi]",
+    "lightMode": "[Light Mode - Hindi]",
+    "language": "भाषा"
+  },
+  "hero": {
+    "title": "[Your Journey to Mental Wellness - Hindi]",
+    "subtitle": "[Professional therapy and support - Hindi]",
+    "description": "[Evidence-based treatment with compassionate care - Hindi]",
+    "cta": "[Start Your Journey - Hindi]",
+    "ctaSecondary": "[Learn About Us - Hindi]",
+    "stats": {
+      "experience": "[Years Experience - Hindi]",
+      "patients": "[Patients Helped - Hindi]",
+      "success": "[Success Rate - Hindi]",
+      "therapists": "[Expert Therapists - Hindi]"
+    }
+  },
+  "programs": {
+    "title": "[Our Treatment Programs - Hindi]",
+    "subtitle": "[Specialized care for your unique needs - Hindi]",
+    "anxiety": {
+      "title": "[Anxiety & Stress Management - Hindi]",
+      "description": "[Overcome anxiety, panic attacks - Hindi]"
+    },
+    "depression": {
+      "title": "[Depression Treatment - Hindi]",
+      "description": "[Evidence-based therapy - Hindi]"
+    },
+    "relationship": {
+      "title": "[Relationship Counseling - Hindi]",
+      "description": "[Strengthen bonds - Hindi]"
+    },
+    "trauma": {
+      "title": "[Trauma & PTSD Therapy - Hindi]",
+      "description": "[Safe, compassionate care - Hindi]"
+    },
+    "addiction": {
+      "title": "[Addiction Recovery - Hindi]",
+      "description": "[Comprehensive support - Hindi]"
+    },
+    "ocd": {
+      "title": "[OCD Treatment - Hindi]",
+      "description": "[Evidence-based ERP therapy - Hindi]"
+    },
+    "worklife": {
+      "title": "[Work-Life Balance - Hindi]",
+      "description": "[Manage stress, prevent burnout - Hindi]"
+    }
+  },
+  "about": {
+    "title": "[About Hope Clinic - Hindi]",
+    "mission": "[Our Mission - Hindi]",
+    "missionText": "[Mission statement in Hindi - please translate]",
+    "values": "[Our Core Values - Hindi]",
+    "team": "[Meet Our Expert Team - Hindi]",
+    "compassion": "[Compassionate Care - Hindi]",
+    "excellence": "[Excellence - Hindi]",
+    "confidentiality": "[Confidentiality - Hindi]",
+    "results": "[Results-Driven - Hindi]"
+  },
+  "testimonials": {
+    "title": "[What Our Patients Say - Hindi]",
+    "subtitle": "[Real stories from real people - Hindi]",
+    "readMore": "[Read Their Story - Hindi]"
+  },
+  "blog": {
+    "title": "[Mental Health Blog - Hindi]",
+    "subtitle": "[Expert insights and wellness tips - Hindi]",
+    "latestPosts": "[Latest Posts - Hindi]",
+    "categories": "[Categories - Hindi]",
+    "tags": "[Tags - Hindi]",
+    "author": "[Author - Hindi]",
+    "date": "[Date - Hindi]",
+    "readTime": "[min read - Hindi]"
+  },
+  "contact": {
+    "title": "[Get In Touch - Hindi]",
+    "subtitle": "[We're here to help you - Hindi]",
+    "name": "[Your Name - Hindi]",
+    "email": "[Your Email - Hindi]",
+    "phone": "[Your Phone - Hindi]",
+    "message": "[Your Message - Hindi]",
+    "send": "[Send Message - Hindi]",
+    "info": "[Contact Information - Hindi]",
+    "hours": "[Working Hours - Hindi]",
+    "emergency": "[Emergency Hotline - Hindi]"
+  },
+  "footer": {
+    "description": "[Professional mental health care with compassion - Hindi]",
+    "quickLinks": "[Quick Links - Hindi]",
+    "services": "[Our Services - Hindi]",
+    "contact": "[Contact Us - Hindi]",
+    "followUs": "[Follow Us - Hindi]",
+    "installApp": "[Install App - Hindi]",
+    "copyright": "[All rights reserved - Hindi]",
+    "privacyPolicy": "[Privacy Policy - Hindi]",
+    "termsOfService": "[Terms of Service - Hindi]"
+  },
+  "dashboard": {
+    "welcome": "स्वागत है",
+    "overview": "[Overview - Hindi]",
+    "appointments": "[My Appointments - Hindi]",
+    "aiChat": "[AI Chat - Hindi]",
+    "profile": "[My Profile - Hindi]",
+    "settings": "[Settings - Hindi]",
+    "logout": "लॉगआउट",
+    "upcomingAppointments": "[Upcoming Appointments - Hindi]",
+    "pastAppointments": "[Past Appointments - Hindi]",
+    "noAppointments": "[No appointments scheduled - Hindi]",
+    "bookNew": "[Book New Appointment - Hindi]"
+  },
+  "admin": {
+    "dashboard": "[Admin Dashboard - Hindi]",
+    "appointments": "[Manage Appointments - Hindi]",
+    "blogs": "[Manage Blogs - Hindi]",
+    "testimonials": "[Manage Testimonials - Hindi]",
+    "users": "[Manage Users - Hindi]",
+    "settings": "[Clinic Settings - Hindi]",
+    "inquiries": "[Inquiries - Hindi]",
+    "approve": "[Approve - Hindi]",
+    "reject": "[Reject - Hindi]",
+    "reply": "[Reply - Hindi]",
+    "create": "[Create New - Hindi]",
+    "update": "[Update - Hindi]",
+    "clinicName": "[Clinic Name - Hindi]",
+    "clinicPhone": "[Phone Number - Hindi]",
+    "clinicEmail": "[Email Address - Hindi]",
+    "clinicAddress": "[Address - Hindi]",
+    "whatsappNumber": "[WhatsApp Number - Hindi]",
+    "workingHours": "[Working Hours - Hindi]"
+  },
+  "appointment": {
+    "title": "[Book Appointment - Hindi]",
+    "selectDate": "[Select Date - Hindi]",
+    "selectTime": "[Select Time - Hindi]",
+    "selectType": "[Appointment Type - Hindi]",
+    "online": "[Online - Hindi]",
+    "offline": "[In-Person - Hindi]",
+    "therapist": "[Select Therapist - Hindi]",
+    "reason": "[Reason for Visit - Hindi]",
+    "notes": "[Additional Notes - Hindi]",
+    "confirm": "[Confirm Appointment - Hindi]",
+    "success": "[Appointment booked successfully - Hindi]",
+    "error": "[Failed to book appointment - Hindi]"
+  },
+  "auth": {
+    "loginTitle": "[Welcome Back - Hindi]",
+    "loginSubtitle": "[Sign in to access your account - Hindi]",
+    "registerTitle": "[Create Account - Hindi]",
+    "registerSubtitle": "[Join Hope Clinic today - Hindi]",
+    "email": "[Email Address - Hindi]",
+    "password": "[Password - Hindi]",
+    "confirmPassword": "[Confirm Password - Hindi]",
+    "firstName": "[First Name - Hindi]",
+    "lastName": "[Last Name - Hindi]",
+    "phone": "[Phone Number - Hindi]",
+    "forgotPassword": "[Forgot Password - Hindi]",
+    "noAccount": "[Don't have an account - Hindi]",
+    "hasAccount": "[Already have an account - Hindi]",
+    "signInWithGoogle": "[Continue with Google - Hindi]",
+    "orContinueWith": "[Or continue with - Hindi]",
+    "agreeToTerms": "[I agree to Terms - Hindi]"
+  },
+  "programPage": {
+    "symptoms": "[Common Symptoms - Hindi]",
+    "causes": "[What Causes - Hindi]",
+    "treatments": "[Treatment Approaches - Hindi]",
+    "basic": "[Basic - Hindi]",
+    "intermediate": "[Intermediate - Hindi]",
+    "advanced": "[Advanced - Hindi]",
+    "successStories": "[Success Stories - Hindi]",
+    "before": "[Before - Hindi]",
+    "after": "[After - Hindi]",
+    "duration": "[Duration - Hindi]",
+    "cta": "[Ready to Start Your Journey - Hindi]",
+    "ctaDescription": "[Take the first step toward healing - Hindi]",
+    "bookConsultation": "[Book Free Consultation - Hindi]",
+    "understanding": "[Understanding - Hindi]"
+  },
+  "aiChat": {
+    "title": "[AI Mental Health Chat - Hindi]",
+    "subtitle": "[24/7 Support Assistant - Hindi]",
+    "placeholder": "[Type your message here - Hindi]",
+    "send": "भेजें",
+    "newSession": "[New Session - Hindi]",
+    "sessionTypes": {
+      "initial": "[Initial Assessment - Hindi]",
+      "ongoing": "[Ongoing Monitoring - Hindi]",
+      "crisis": "[Crisis Intervention - Hindi]",
+      "followup": "[Follow-up Check - Hindi]"
+    },
+    "disclaimer": "[AI assistant disclaimer - Hindi]"
+  },
+  "messages": {
+    "success": {
+      "saved": "[Saved successfully - Hindi]",
+      "updated": "[Updated successfully - Hindi]",
+      "deleted": "[Deleted successfully - Hindi]",
+      "sent": "[Message sent successfully - Hindi]",
+      "loggedIn": "[Welcome back - Hindi]",
+      "loggedOut": "[Logged out successfully - Hindi]",
+      "registered": "[Account created successfully - Hindi]"
+    },
+    "error": {
+      "generic": "[Something went wrong - Hindi]",
+      "network": "[Network error - Hindi]",
+      "unauthorized": "[You are not authorized - Hindi]",
+      "notFound": "[Resource not found - Hindi]",
+      "validation": "[Please check your inputs - Hindi]"
+    }
+  }
+}
