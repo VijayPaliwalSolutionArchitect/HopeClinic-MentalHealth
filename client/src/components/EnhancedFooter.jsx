@@ -21,7 +21,7 @@ const EnhancedFooter = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl" />
       
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div><div className="flex items-center space-x-2 mb-4"><div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center"><Heart className="w-6 h-6 text-white" fill="currentColor" /></div><span className="text-xl font-bold text-white">Hope Clinic</span></div><p className="text-sm mb-4">Professional mental health services with compassion and expertise. Your journey to wellness starts here.</p><div className="flex space-x-4"><a href="#" className="hover:text-primary-400 transition-colors"><Facebook className="w-5 h-5" /></a><a href="#" className="hover:text-primary-400 transition-colors"><Twitter className="w-5 h-5" /></a><a href="#" className="hover:text-primary-400 transition-colors"><Instagram className="w-5 h-5" /></a><a href="#" className="hover:text-primary-400 transition-colors"><Linkedin className="w-5 h-5" /></a></div></div>
           
