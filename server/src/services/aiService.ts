@@ -53,6 +53,10 @@ export class AIService {
   };
 
   async getInitialMessage(sessionType: string): Promise<string> {
+    if (mockService) {
+      return mockService.getInitialMessage(sessionType);
+    }
+    
     const greetings = {
       INITIAL_ASSESSMENT: "Hello! I'm here to help you get started with Hope Clinic. I'd like to understand how you're feeling and what brings you here today. Can you tell me a bit about what's been on your mind lately?",
       ONGOING_MONITORING: "Hi there! I hope you're doing well. Let's check in on how you've been feeling since we last talked. How has your mood been over the past few days?",
