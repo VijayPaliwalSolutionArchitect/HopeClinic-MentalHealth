@@ -190,6 +190,11 @@ Urgency levels: NORMAL (stable), MODERATE (mild distress), HIGH (significant dis
   }
 
   async generateReport(session: any): Promise<any> {
+    // Use mock service if OpenAI not configured
+    if (mockService) {
+      return mockService.generateReport(session);
+    }
+    
     try {
       // Compile conversation
       const conversation = session.messages
