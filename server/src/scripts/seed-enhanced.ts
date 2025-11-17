@@ -306,6 +306,35 @@ async function main() {
   }
   console.log('✅ Created 10 testimonials');
 
+  // Create default clinic settings
+  const defaultSettings = [
+    { key: 'clinicName', value: 'Hope Clinic - Mental Health & Wellness' },
+    { key: 'clinicPhone', value: '+91 9876543210' },
+    { key: 'clinicEmail', value: 'contact@hopeclinic.com' },
+    { key: 'clinicAddress', value: '123 Mental Health Street, Mumbai, Maharashtra 400001, India' },
+    { key: 'whatsappNumber', value: '+919876543210' },
+    { key: 'emergencyHotline', value: '1-800-273-8255' },
+    { key: 'workingHours', value: 'Monday - Saturday: 9:00 AM - 8:00 PM, Sunday: 10:00 AM - 6:00 PM' },
+    { key: 'appointmentDuration', value: '60' },
+    { key: 'allowOnlineBooking', value: 'true' },
+    { key: 'enableAIChat', value: 'true' },
+    { key: 'maintenanceMode', value: 'false' },
+    { key: 'maxAppointmentsPerDay', value: '20' },
+    { key: 'socialFacebook', value: 'https://facebook.com/hopeclinic' },
+    { key: 'socialTwitter', value: 'https://twitter.com/hopeclinic' },
+    { key: 'socialInstagram', value: 'https://instagram.com/hopeclinic' },
+    { key: 'socialLinkedin', value: 'https://linkedin.com/company/hopeclinic' }
+  ];
+
+  for (const setting of defaultSettings) {
+    await prisma.setting.upsert({
+      where: { key: setting.key },
+      update: { value: setting.value },
+      create: setting
+    });
+  }
+  console.log('✅ Created clinic settings');
+
   console.log('\n🎉 Enhanced database seeding completed!');
 }
 
