@@ -10,6 +10,12 @@ const GoogleAuthButton = ({ variant = 'outline', size = 'md', text = 'Continue w
   const { setAuth } = useAuthStore();
   const [loading, setLoading] = useState(false);
   const [googleLoaded, setGoogleLoaded] = useState(false);
+  
+  // Hide button if Google OAuth not configured
+  const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+  if (!clientId || clientId.includes('placeholder')) {
+    return null; // Don't render button
+  }
 
   useEffect(() => {
     // Load Google Identity Services
