@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, Sun, Moon, Heart, ChevronDown, LogOut } from 'lucide-react';
+import { Menu, X, Sun, Moon, Heart, ChevronDown, LogOut, Languages } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useThemeStore } from '../store/themeStore';
 import { useAuthStore } from '../store/authStore';
