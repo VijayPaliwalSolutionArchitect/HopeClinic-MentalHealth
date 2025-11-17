@@ -73,6 +73,11 @@ export class AIService {
     messageHistory: MessageHistory[];
     currentMessage: string;
   }): Promise<AIResponseData> {
+    // Use mock service if OpenAI not configured
+    if (mockService) {
+      return mockService.getResponse(params);
+    }
+    
     try {
       const { sessionType, messageHistory, currentMessage } = params;
 
