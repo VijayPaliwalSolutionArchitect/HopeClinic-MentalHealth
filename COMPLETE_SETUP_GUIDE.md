@@ -99,25 +99,25 @@ cp .env.example .env
 
 ## 🚀 Step 4: Start the Application
 
-### Option A: Start Both Servers Together (Recommended)
-
-```bash
-# From project root
-yarn dev
-```
-
-### Option B: Start Separately (for debugging)
+### Option A: Start Both Servers Separately (Recommended)
 
 **Terminal 1 (Backend):**
 ```bash
 cd server
-yarn dev
+npm run dev
 ```
 
 **Terminal 2 (Frontend):**
 ```bash
 cd client
-yarn dev
+npm run dev
+```
+
+### Option B: Start Both Using Concurrently (if available)
+
+```bash
+# From project root (if concurrently is installed)
+npm run dev
 ```
 
 **✅ Success Output:**
