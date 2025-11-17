@@ -1,8 +1,13 @@
 import OpenAI from 'openai';
+import MockAIService from './mockAIService';
 
-const openai = new OpenAI({
+const useMock = !process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === 'mock' || process.env.OPENAI_API_KEY.includes('placeholder');
+
+const openai = useMock ? null : new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
+
+const mockService = useMock ? new MockAIService() : null;
 
 interface MessageHistory {
   role: string;
