@@ -99,20 +99,27 @@ const EnhancedHeader = () => {
             </button>
 
             {isAuthenticated ? (
-              <div className="hidden lg:flex items-center space-x-3">
-                <Link to={user?.role === 'ADMIN' || user?.role === 'DOCTOR' ? '/admin' : '/dashboard'}>
-                  <Button variant="secondary" size="sm">Dashboard</Button>
+              <div className="flex items-center gap-3">
+                <Link 
+                  to={user?.role === 'ADMIN' || user?.role === 'DOCTOR' ? '/admin' : '/dashboard'}
+                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+                >
+                  Dashboard
                 </Link>
-                <Button onClick={handleLogout} variant="outline" size="sm">
-                  <LogOut className="w-4 h-4 mr-2" />
+                <button
+                  onClick={handleLogout}
+                  className="px-4 py-2 rounded-xl border-2 border-gray-300 dark:border-gray-600 hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-300 flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400"
+                >
+                  <LogOut className="w-4 h-4" />
                   Logout
-                </Button>
+                </button>
               </div>
             ) : (
-              <div className="hidden lg:flex items-center space-x-3">
-                <Link to="/login"><Button variant="outline" size="sm">Login</Button></Link>
-                <Link to="/book-appointment"><Button size="sm">Book Appointment</Button></Link>
-              </div>
+              <Link to="/login">
+                <Button size="sm" className="bg-gradient-to-r from-primary-500 to-secondary-500 hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  Sign In
+                </Button>
+              </Link>
             )}
 
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
