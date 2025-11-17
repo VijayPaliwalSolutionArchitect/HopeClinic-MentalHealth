@@ -472,7 +472,9 @@ After setup, verify everything works:
    rm server/dev.db
    
    # Reinstall
-   yarn install
+   cd server && npm install
+   cd ../client && npm install
+   cd ..
    
    # Rebuild database
    cd server
@@ -480,9 +482,12 @@ After setup, verify everything works:
    npx prisma migrate deploy
    npx ts-node src/scripts/seed-enhanced.ts
    
-   # Start
-   cd ..
-   yarn dev
+   # Start backend
+   npm run dev
+   
+   # In new terminal, start frontend
+   cd client
+   npm run dev
    ```
 
 ---
