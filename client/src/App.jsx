@@ -54,6 +54,13 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="programs" element={<Programs />} />
           <Route path="programs/:slug" element={<ProgramDetail />} />
+          <Route path="programs/anxiety-stress-management" element={<AnxietyStressManagement />} />
+          <Route path="programs/depression-treatment" element={<DepressionTreatment />} />
+          <Route path="programs/relationship-counseling" element={<RelationshipCounseling />} />
+          <Route path="programs/trauma-ptsd-therapy" element={<TraumaPTSDTherapy />} />
+          <Route path="programs/addiction-recovery" element={<AddictionRecovery />} />
+          <Route path="programs/ocd-treatment" element={<OCDTreatment />} />
+          <Route path="programs/work-life-balance" element={<WorkLifeBalance />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="blogs/:slug" element={<BlogDetail />} />
           <Route path="testimonials" element={<EnhancedTestimonials />} />
