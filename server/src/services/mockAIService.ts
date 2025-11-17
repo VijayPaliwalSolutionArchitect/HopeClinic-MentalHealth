@@ -45,7 +45,7 @@ export class MockAIService {
     currentMessage: string;
   }): Promise<AIResponseData> {
     
-    const message = this.currentMessage.toLowerCase();
+    const message = params.currentMessage.toLowerCase();
     
     // Detect crisis keywords
     const crisisKeywords = ['suicide', 'kill myself', 'end it all', 'want to die', 'hurt myself'];
