@@ -340,9 +340,11 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
 
 ### Development
 ```bash
-yarn dev              # Start both servers
-cd server && yarn dev # Start backend only
-cd client && yarn dev # Start frontend only
+# Start backend
+cd server && npm run dev
+
+# Start frontend (in new terminal)
+cd client && npm run dev
 ```
 
 ### Database
@@ -356,14 +358,16 @@ npx ts-node src/scripts/seed-enhanced.ts  # Seed data
 
 ### Build for Production
 ```bash
-yarn build            # Build both
-cd client && yarn build  # Build frontend only
-cd server && yarn build  # Build backend only
+# Build backend
+cd server && npm run build
+
+# Build frontend
+cd client && npm run build
 ```
 
 ### Linting
 ```bash
-cd client && yarn lint   # Lint frontend
+cd client && npm run lint   # Lint frontend
 ```
 
 ---
